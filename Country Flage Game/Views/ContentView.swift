@@ -8,12 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var quizManager = QuizManager()
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            NavigationView{
+                VStack(spacing: 40){
+                    VStack(spacing: 20) {
+                        Text("Country Flage Game")
+                            .font(.title)
+                            .fontWeight(.heavy)
+                            .foregroundColor(.yellow)
+                        Text("Ready To Test Your Sillz?")
+                            .foregroundColor(.yellow)
+                    }
+                    NavigationLink{
+                        QuestionView()
+                            .environmentObject(quizManager)
+                    } label: {
+                        Custom_Button(text: "Start")
+                    }
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea(.all)
+                .background(.cyan)
+            }
         }
         .padding()
     }
