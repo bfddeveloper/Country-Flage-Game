@@ -38,6 +38,9 @@ class QuizManager: ObservableObject {
             let nextQuestion = questions[index]
             country = nextQuestion.correctAnswer.text
             answerChoices = ([nextQuestion.correctAnswer] + nextQuestion.incorrectAnswers).shuffled()
+            index += 1
+        } else {
+            playingGame = false
         }
     }
     
