@@ -25,7 +25,7 @@ struct QuestionView: View {
                 }
                 ProgressBar(progress: quizManager.progress)
                 VStack(spacing: 20){
-                    Text("Which country's flagis this")
+                    Text("Which country's flag is this")
                         .font(.title)
                     Image(quizManager.country)
                         .resizable()
@@ -50,7 +50,7 @@ struct QuestionView: View {
         }
         else {
             VStack(spacing: 20) {
-                Text("COuntry Flage Quiz")
+                Text("Country Flage Quiz")
                     .font(.title)
                 Text("Congratulations")
                 Text("You scored \(quizManager.score) out of \(quizManager.questions.count)")
